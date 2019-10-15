@@ -6,35 +6,35 @@
 
 - name: Copy dockerfile
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/docker/Dockerfile"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerwebelliot1/docker/Dockerfile"
       dest: /tmp/docker-beginnerwebelliot1/Dockerfile
       mode: '0744'
       force: yes
 
 - name: Copy entrypoint script
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/entrypoint.sh"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/entrypoint.sh"
       dest: /tmp/docker-beginnerwebelliot1/entrypoint.sh
       mode: '0744'
       force: yes
 
 - name: Copy ports.conf
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/ports.conf"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/ports.conf"
       dest: /tmp/docker-beginnerwebelliot1/ports.conf
       mode: '0700'
       force: yes
 
 - name: Copy default site conf
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/000-default.conf"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/000-default.conf"
       dest: /tmp/docker-beginnerwebelliot1/000-default.conf
       mode: '0700'
       force: yes
 
 - name: Copy Site Content
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/web_content/"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/web_content/"
       dest: /tmp/docker-beginnerwebelliot1/web_content/
       mode: '1700'
       force: yes

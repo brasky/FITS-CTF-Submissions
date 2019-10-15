@@ -6,7 +6,7 @@
 
 - name: Copy dockerfile
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerlinuxelliot1/docker/Dockerfile"
+      src: "/home/rundeck/FITS-CTF-Submissions/roles/beginnerlinuxelliot1/docker/Dockerfile"
       dest: /tmp/docker-beginnerlinuxelliot1/Dockerfile
       mode: '0744'
       force: yes
