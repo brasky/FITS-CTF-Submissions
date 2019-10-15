@@ -30,4 +30,4 @@
     restart: yes
     expose: 22
     detach: yes
-    published_ports: '6002:22'
+    published_ports: '9998:22'

@@ -1,0 +1,9 @@
+---
+- name: Configure submission server
+  hosts: all
+  become: yes
+  roles:
+    - common
+    - beginnerlinuxelliot1
+    - beginnerwebelliot1
+    
