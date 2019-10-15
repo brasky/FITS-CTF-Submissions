@@ -1,31 +1,31 @@
 - name: Create a directory if it does not exist
   file:
-    path: /tmp/docker-beginnerlinux2
+    path: /tmp/docker-beginnerlinuxelliot1
     state: directory
     mode: '0755'
 
 - name: Copy dockerfile
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerlinux2/docker/Dockerfile"
-      dest: /tmp/docker-beginnerlinux2/Dockerfile
+      src: "FITS-CTF-Submissions/roles/beginnerlinuxelliot1/docker/Dockerfile"
+      dest: /tmp/docker-beginnerlinuxelliot1/Dockerfile
       mode: '0744'
       force: yes
 
 - name: Build image
   docker_image:
-    name: beginnerlinux2-image
+    name: beginnerlinuxelliot1-image
     build:
-      path: /tmp/docker-beginnerlinux2/
+      path: /tmp/docker-beginnerlinuxelliot1/
     source: build
     state: present
     force_source: yes
-    repository: beginnerlinux2-image:latest
+    repository: beginnerlinuxelliot1-image:latest
     force_tag: yes
 
 - name: Run the container
   docker_container:
-    name: beginnerlinux2
-    image: beginnerlinux2-image
+    name: beginnerlinuxelliot1
+    image: beginnerlinuxelliot1-image
     state: started
     restart: yes
     expose: 22

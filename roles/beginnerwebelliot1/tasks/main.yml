@@ -1,59 +1,59 @@
 - name: Create a directory if it does not exist
   file:
-    path: /tmp/docker-beginnerweb2
+    path: /tmp/docker-beginnerwebelliot1
     state: directory
     mode: '0755'
 
 - name: Copy dockerfile
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerweb2/docker/Dockerfile"
-      dest: /tmp/docker-beginnerweb2/Dockerfile
+      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/docker/Dockerfile"
+      dest: /tmp/docker-beginnerwebelliot1/Dockerfile
       mode: '0744'
       force: yes
 
 - name: Copy entrypoint script
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerweb2/resources/entrypoint.sh"
-      dest: /tmp/docker-beginnerweb2/entrypoint.sh
+      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/entrypoint.sh"
+      dest: /tmp/docker-beginnerwebelliot1/entrypoint.sh
       mode: '0744'
       force: yes
 
 - name: Copy ports.conf
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerweb2/resources/ports.conf"
-      dest: /tmp/docker-beginnerweb2/ports.conf
+      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/ports.conf"
+      dest: /tmp/docker-beginnerwebelliot1/ports.conf
       mode: '0700'
       force: yes
 
 - name: Copy default site conf
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerweb2/resources/000-default.conf"
-      dest: /tmp/docker-beginnerweb2/000-default.conf
+      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/000-default.conf"
+      dest: /tmp/docker-beginnerwebelliot1/000-default.conf
       mode: '0700'
       force: yes
 
 - name: Copy Site Content
   copy:
-      src: "FITS-CTF-Submissions/roles/beginnerweb2/resources/web_content/"
-      dest: /tmp/docker-beginnerweb2/web_content/
+      src: "FITS-CTF-Submissions/roles/beginnerwebelliot1/resources/web_content/"
+      dest: /tmp/docker-beginnerwebelliot1/web_content/
       mode: '1700'
       force: yes
 
 - name: Build image
   docker_image:
-    name: beginnerweb2-image
+    name: beginnerwebelliot1-image
     build:
-      path: /tmp/docker-beginnerweb2/
+      path: /tmp/docker-beginnerwebelliot1/
     source: build
     state: present
     force_source: yes
-    repository: beginnerweb2-image:latest
+    repository: beginnerwebelliot1-image:latest
     force_tag: yes
 
 - name: Run the container
   docker_container:
-    name: beginnerweb2
-    image: beginnerweb2-image
+    name: beginnerwebelliot1
+    image: beginnerwebelliot1-image
     state: started
     restart: yes
     expose: 8002
