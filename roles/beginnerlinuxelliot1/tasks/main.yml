@@ -6,7 +6,7 @@
 
 - name: Copy dockerfile
   copy:
-      src: "{{ repo_path }}/roles/beginnerlinux2/docker/Dockerfile"
+      src: "FITS-CTF-Submissions/roles/beginnerlinux2/docker/Dockerfile"
       dest: /tmp/docker-beginnerlinux2/Dockerfile
       mode: '0744'
       force: yes
