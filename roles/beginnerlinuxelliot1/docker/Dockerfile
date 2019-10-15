@@ -14,8 +14,8 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
-RUN touch /home/jack/catme.txt
-RUN echo "flag{beginnerlinuxelliot1}" >> /home/jack/catme.txt
-RUN chown root:root /home/jack/catme.txt
-RUN chmod 400 /home/jack/catme.txt
-RUN echo 'jack ALL=NOPASSWD: /bin/cat, /usr/bin/whoami' >> /etc/sudoers
+RUN touch /home/myUser/catme.txt
+RUN echo "flag{beginnerlinuxelliot1}" >> /home/myUser/catme.txt
+RUN chown root:root /home/myUser/catme.txt
+RUN chmod 400 /home/myUser/catme.txt
+RUN echo 'myUser ALL=NOPASSWD: /bin/cat, /usr/bin/whoami' >> /etc/sudoers
